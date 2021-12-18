@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="ul-list">
+      <li>Item A</li>
+      <li>Item B</li>
+      <li>Item C</li>
+      <li>Item D</li>
+      <li>Item E</li>
+    </ul>
+
+    <ul id="list2" class="ul-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </body>
+  <script>
+    // const list = document.getElementsByTagName("ul");
+    // console.log(list);
+    // console.log(document.getElementsByClassName("ul-list"));
+    // console.log(document.getElementById("list2"));
+    // const arrFromList = Array.from(document.getElementsByClassName("ul-list"));
+    // console.log(arrFromList);
+    const list2 = document.getElementById("list2");
+    // console.log(list2.innerHTML);
+    // const list2HTML = list2.innerHTML;
+    function addHTML(text) {
+      // dynamically aading elements to the list.
+      list2.innerHTML += `<li>${text}</li>`;
+    }
+
+    addHTML("Hello World");
+    addHTML("Programming");
+    addHTML("World Wide Web");
+    addHTML("Sabse peeche hum khade");
+    addHTML("This is called dynamically added");
+
+    const listItems = list2.getElementsByTagName("li");
+    const fifth = listItems.item(5); // getting fifth element of list2
+
+    console.log(fifth.textContent);
+    fifth.textContent = "Modified"; // modified fifth element of list 2
+    console.log(fifth.textContent);
+
+    console.log(list2);
+  </script>
+</html>

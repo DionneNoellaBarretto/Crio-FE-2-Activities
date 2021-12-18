@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Events</title>
+  </head>
+
+  <body>
+    <script>
+      //1. Select the "heading" element and print its text content.
+      console.log(document.getElementById("heading").textContent);
+    </script>
+    <script>
+      //2. Attach an event listener to Document
+      //and print the heading's text content when DOM loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log(document.getElementById("heading").textContent);
+      });
+    </script>
+    <h1 id="heading">Counter</h1>
+  </body>
+</html>

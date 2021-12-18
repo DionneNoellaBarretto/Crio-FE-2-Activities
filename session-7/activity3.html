@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>User Data</h1>
+  <div>
+      <input id="name" type="text" name="fname" placeholder="Enter Name"></input>
+      <input id="email" type="email" name="email" placeholder="Enter Email"/>
+      <button id="btn">Show Details</button>
+  </div>
+  
+  <script>
+    const data = {
+      fname: "",
+      email: ""
+    }
+    const handleInput = (e) => {
+      const key = e.target.name;
+      const value = e.target.value;
+      data[key] = key;
+      data[value] = value;
+    }
+
+    const username = document.getElementById("name");
+    const useremail = document.getElementById("email");
+
+    username.addEventListener("input",handleInput);
+    useremail.addEventListener("input",handleInput);
+
+    const submitBtn = document.getElementById("btn");
+submitBtn.addEventListener("click", () => {
+  console.log(data);
+})
+    </script>
+</body>
+</html>

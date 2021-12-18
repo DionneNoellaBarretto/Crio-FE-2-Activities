@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Sorted List</h1>
+    <ul class="sortedList"></ul>
+    <script>
+      function add(parent, childTag, text) {
+        const list = document.getElementById(parent);
+        const li = document.createElement(childTag);
+        li.innerText = text; // adding the text to list item
+        list.append(li); // appending the list item to the ordered list
+      }
+
+      function generateSortedList(arr) {
+        arr.sort((a, b) => a - b);
+        arr.forEach((item) => add("sortedList", "li", item));
+      }
+
+      generateSortedList([25, 58, 18, 21, 2, 89, 105]);
+    </script>
+  </body>
+</html>

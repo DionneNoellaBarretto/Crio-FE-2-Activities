@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="names">
+      <li>John</li>
+      <li>Mary</li>
+      <li>Dora</li>
+      <li>Donny</li>
+    </ul>
+    <script>
+      function searchPerson(elemId, name) {
+        const list = document.getElementById(elemId);
+        // console.log(list);
+        // console.log(list);
+
+        const listItems = list.getElementsByTagName("li");
+
+        // console.log(listItems);
+
+        const Arraylist = Array.from(listItems);
+        // console.log(Arraylist);
+        // for (let index = 0; index < Arraylist.length; index++) {
+        //   if (Arraylist[index].textContent == name) {
+        //     return "Found";
+        //   }
+        // }
+        // return "Not Found";
+
+        //Alternative to loops is using map function
+
+        const names = Arraylist.map((item) => item.textContent);
+
+        console.log(names);
+
+        if (names.includes(name)) {
+          console.log("Found Name !!", name);
+        } else {
+          console.log(name, "Not found in list");
+        }
+        // console.log("Not Found");
+      }
+
+      console.log(searchPerson("names", "Pulkit"));
+    </script>
+  </body>
+</html>
